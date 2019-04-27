@@ -2,12 +2,13 @@
 # -*- encoding: utf-8 -*-
 """ Mersenne_sequence.py """
 
-import json  # requires python >= 2.6
-import sys
+import json
 import secrets
+import sys
 import timeit
+from typing import Any, Dict, List, Tuple
+
 import numpy as np
-from typing import Dict, List, Tuple, Any
 
 name = "Mersenne_sequence.py"
 json_file = sys.path[0] + '/' + name + ".json"

@@ -5,8 +5,6 @@ verify_ssl = true
 
 [dev-packages]
 pylint = "*"
-mypy = "*"
-flake8 = "*"
 yapf = "*"
 
 [packages]
