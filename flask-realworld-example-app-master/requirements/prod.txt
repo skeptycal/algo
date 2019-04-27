@@ -1,0 +1,18 @@
+# Everything needed in production
+
+click
+Flask
+Flask-Cors
+Flask-JWT-Extended
+Flask-Migrate
+flask_apispec
+Flask_Bcrypt
+Flask_Caching
+Flask_SQLAlchemy==2.2
+gunicorn
+marshmallow
+psycopg2
+PyJWT
+SQLAlchemy==1.1.9
+unicode_slugify
+Werkzeug

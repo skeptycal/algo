@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+mypy = "*"
+flake8 = "*"
+yapf = "*"
+
+[packages]
+requests = "*"
+flask = "*"
+pre-commit = "*"
+numpy = "*"
+
+[requires]
+python_version = "3.7"
