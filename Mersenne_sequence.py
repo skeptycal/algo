@@ -4,6 +4,7 @@
 
 import json
 import secrets
+import statistics
 import sys
 import timeit
 from typing import Any, Dict, List, Tuple
@@ -55,6 +56,7 @@ class Mersenne_Sequence(object):
         self.n: int = n
         self.f: str = f
         self.r: int = r
+        self.timer_setup: str = 'from __main__ import timer'
         self.npa: np.ndarray
 
     def update_parameters(self, f: str, n: int, r: int) -> int:
@@ -63,9 +65,9 @@ class Mersenne_Sequence(object):
         self.r = r
         return 0
 
-    def time_fn(fn: Any, setup: str) -> List[float]:
+    def time_fn(self, fn: Any, setup: str) -> List[float]:
         """ time a function """
-        return timeit.repeat(fn, "from __main__ import ", number=r)
+        return timeit.repeat(fn, setup=self.timer_setup, number=r)
 
     def mersenne_1(self) -> int:
         # Generator comprehension version
@@ -111,7 +113,7 @@ def mainloop() -> int:
         f - string with formula in python eval format
         r - repeats for each iteration set
         """
-    f: str = "2*{} + 1"
+    f: str = "2 * {} + 1"
     n: int = 12
     r: int = 5000
     times: Dict = {}
@@ -122,12 +124,15 @@ def mainloop() -> int:
 # cli_main
 if __name__ == "__main__":
 
-    def g(x: int):
+    def g(x: int) -> int:
         return x * x
 
-    timeit.repeat("for x in range(100): g(x)",
-                  "from __main__ import g",
-                  number=100000)
+    m: float = statistics.mean(
+        timeit.repeat("for x in range(100): g(x)",
+                      "from __main__ import g",
+                      number=10000))
+
+    print('Average of 5 trials: {0:.{1}f}'.format(m, 3))
 
     mainloop()
 

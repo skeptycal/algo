@@ -12,6 +12,8 @@ requests = "*"
 flask = "*"
 pre-commit = "*"
 numpy = "*"
+pandas = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.7"
