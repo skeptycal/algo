@@ -37,7 +37,7 @@ repos:
       - id: detect-private-key
       - id: end-of-file-fixer
       # -   id: flake8
-      - id: pretty-format-json
+      # - id: pretty-format-json
       - id: requirements-txt-fixer
       - id: trailing-whitespace
 #   - repo: git://github.com/pre-commit/mirrors-pylint

@@ -65,9 +65,9 @@ class Mersenne_Sequence(object):
         self.r = r
         return 0
 
-    def time_fn(self, fn: Any, setup: str) -> List[float]:
+    def time_fn(self, fn: Any, setup: str, number) -> List[float]:
         """ time a function """
-        return timeit.repeat(fn, setup=self.timer_setup, number=r)
+        return timeit.repeat(fn, setup, number)
 
     def mersenne_1(self) -> int:
         # Generator comprehension version
@@ -90,6 +90,7 @@ class Mersenne_Sequence(object):
     def mersenne_4(self) -> int:
         # numpy  comprehension version
         pass
+
 
     def switch_mersenne(self, argument):
         """
