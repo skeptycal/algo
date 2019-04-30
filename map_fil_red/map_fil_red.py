@@ -4,7 +4,7 @@
 
 import math
 # import json
-# import secrets
+import secrets
 # import statistics
 # import sys
 import timeit
@@ -22,3 +22,8 @@ reference = "https://www.youtube.com/watch?v=09JslnY7W_k"
 def area(r: float) -> float:
     """Area of a circle with radius 'r'."""
     return math.pi * (r**2)
+
+
+def fake_radius_list(n: int = 100) -> List(float):
+    """ create a list of fake radii data """
+    return [secrets. for i in range(n + 1)]
