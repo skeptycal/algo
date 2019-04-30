@@ -10,6 +10,7 @@ import secrets
 import timeit
 from typing import Any, Dict, List, Tuple
 
+
 import numpy as np
 
 name = "map_fil_red.py"
@@ -26,4 +27,7 @@ def area(r: float) -> float:
 
 def fake_radius_list(n: int = 100) -> List(float):
     """ create a list of fake radii data """
-    return [secrets. for i in range(n + 1)]
+    return [i for i in range(n + 1)]
+
+
+secrets.random()
