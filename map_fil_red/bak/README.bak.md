@@ -1,4 +1,4 @@
-# map_fil_red.py version 0.0.1
+#  version
 
 ---
 
@@ -6,34 +6,30 @@
 
 .
 ├── README.md
-├── bak
-│   ├── README.bak.md
-│   └── codecov.yml.bak
 ├── codecov.yml
 ├── map_fil_red.py
-├── pc
-└── requirements.txt
+└── pc
 
-1 directory, 7 files
+0 directories, 4 files
 
 ```
 
 ---
 
-## Demo functions using map, filter, and reduce in python.
+##
 
 ```bash
 
 
 ###############################################################################
-# map_fil_red.py : Demo functions using map, filter, and reduce in python. (version 0.0.1)
+#  :  (version )
 
 # author    - Michael Treanor  <skeptycal@gmail.com>
 # copyright - 2019 (c) Michael Treanor
 # license   - MIT <https://opensource.org/licenses/MIT>
 # github    - https://www.github.com/skeptycal
 
-# Usage: map_fil_red.py {init|reset|version|help}
+# Usage:  {init|reset|version|help}
 
 #   Parameters:
 #       init, -i, --init        -- install and initialize
