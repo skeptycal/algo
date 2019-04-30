@@ -1,0 +1,45 @@
+language: python
+python:
+  - "2.7"
+  - "3.5"
+  - "3.6"
+
+  # PyPy versions
+  - "pypy3.5"
+# Django Stuff:
+# env:
+#   - DJANGO_VERSION=1.10.8
+#   - DJANGO_VERSION=1.11.5
+# install:
+#   - pip install -q Django==$DJANGO_VERSION
+#   - python setup.py -q install
+
+# command to install dependencies
+install:
+  # Default ...
+  # - pip install -r requirements.txt
+  # - pip install .
+
+  # Specific ...
+  - pip install -e .
+  # Limit setuptools as some newer versions have Issues(tm). This needs doing
+  # as its own step; trying to do it via requirements.txt isn't always
+  # sufficient.
+  - pip install "setuptools<34"
+  # Dev requirements
+  # TODO: follow invoke and split it up a bit so we're not pulling down
+  # conflicting or unused-by-travis deps?
+  - pip install -r dev-requirements.txt
+# command to run tests
+script: pytest
+after_success:
+  # Upload coverage data to codecov
+  - codecov
+notifications:
+  # irc:
+  #   channels: "irc.freenode.org#xxxxx"
+  #   template:
+  #     - "%{repository_name}@%{branch}: %{message} (%{build_url})"
+  #   on_success: change
+  #   on_failure: change
+  email: skeptycal@gmail.com
