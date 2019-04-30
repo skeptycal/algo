@@ -11,10 +11,9 @@
 │   └── codecov.yml.bak
 ├── codecov.yml
 ├── map_fil_red.py
-├── pc
 └── requirements.txt
 
-1 directory, 7 files
+1 directory, 6 files
 
 ```
 
