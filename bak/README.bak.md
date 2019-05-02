@@ -1,21 +1,25 @@
-# algo version 0.1.0
+# project version 0.0.1
+
+
+
+05-01-2019 | 20:15:39
 
 ---
 
-## test environment for algorithm analysis
+## portfolio project for macOS
 
 ```bash
 
 
 ###############################################################################
-# algo : test environment for algorithm analysis (version 0.1.0)
+# project : portfolio project for macOS (version 0.0.1)
 
 # author    - Michael Treanor  <skeptycal@gmail.com>
 # copyright - 2019 (c) Michael Treanor
 # license   - MIT <https://opensource.org/licenses/MIT>
 # github    - https://www.github.com/skeptycal
 
-# Usage: algo {init|version|help}
+# Usage: project {init|reset|version|help}
 
 #   Parameters:
 #       init, -i, --init        -- install and initialize
@@ -46,34 +50,102 @@
 ###############################################################################
 
 
-# Sample yaml template ########################################################
-default_language_version:
-    python: python3.7
-default_stages: [commit, push]
-exclude: '^$'
-fail_fast: false
-repos:
--   repo: git://github.com/pre-commit/pre-commit-hooks
-    sha: master
-    hooks:
-    -   id: check-added-large-files
-    -   id: check-byte-order-marker
-    -   id: check-docstring-first
-    -   id: check-case-conflict
-    -   id: check-json
-    -   id: check-merge-conflict
-    -   id: check-symlinks
-    -   id: check-yaml
-#   -   id: detect-aws-credentials
-    -   id: detect-private-key
-    -   id: end-of-file-fixer
-    -   id: flake8
-    -   id: pretty-format-json
-    -   id: requirements-txt-fixer
-    -   id: trailing-whitespace
--   repo: git://github.com/pre-commit/mirrors-pylint
-    sha: master
-    hooks:
-    -   id: pylint
+```
 
+
+---
+
+```bash
+
+.
+├── Mandelbrot_lines.py
+├── Mersenne_sequence.py
+├── Pipfile
+├── Pipfile.lock
+├── SqRoot_Finder.pyw
+├── SqRoot_Finder.zip
+├── bak
+│   └── README.bak.md
+├── bin_packing.py
+├── codecov.yml
+├── collatz_conjecture
+│   ├── Pipfile
+│   ├── Pipfile.lock
+│   ├── collatz.py
+│   └── tempCodeRunnerFile.py
+├── datasets
+│   ├── corncob_caps.txt
+│   ├── corncob_lowercase.txt
+│   └── english-words-master.zip
+├── datatime.py
+├── flask-realworld-example-app-master
+│   ├── LICENSE
+│   ├── Pipfile
+│   ├── Pipfile.lock
+│   ├── Procfile
+│   ├── README.rst
+│   ├── Vagrantfile
+│   ├── autoapp.py
+│   ├── conduit
+│   │   ├── __init__.py
+│   │   ├── app.py
+│   │   ├── articles
+│   │   │   ├── __init__.py
+│   │   │   ├── models.py
+│   │   │   ├── serializers.py
+│   │   │   └── views.py
+│   │   ├── commands.py
+│   │   ├── compat.py
+│   │   ├── database.py
+│   │   ├── exceptions.py
+│   │   ├── extensions.py
+│   │   ├── profile
+│   │   │   ├── __init__.py
+│   │   │   ├── models.py
+│   │   │   ├── serializers.py
+│   │   │   └── views.py
+│   │   ├── settings.py
+│   │   ├── user
+│   │   │   ├── __init__.py
+│   │   │   ├── models.py
+│   │   │   ├── serializers.py
+│   │   │   └── views.py
+│   │   └── utils.py
+│   ├── image.png
+│   ├── requirements
+│   │   ├── dev.txt
+│   │   └── prod.txt
+│   ├── requirements.txt
+│   ├── setup.cfg
+│   └── tests
+│       ├── __init__.py
+│       ├── conftest.py
+│       ├── factories.py
+│       ├── test_articles.py
+│       ├── test_authentication.py
+│       ├── test_config.py
+│       ├── test_models.py
+│       └── test_profile.py
+├── map_fil_red
+│   └── map_fil_red.py
+├── ml_flask
+│   ├── README.md
+│   ├── credentials.json
+│   ├── diabetes-model.pkl
+│   ├── diabetes_redsamurai_db.ipynb
+│   ├── diabetes_redsamurai_endpoint_db.ipynb
+│   ├── diabetes_redsamurai_endpoint_db.py
+│   ├── invoice-automation-d1.ipynb
+│   ├── invoice-automation-d2.ipynb
+│   ├── invoice-risk-model-local.ipynb
+│   ├── invoice_data_adjusted.csv
+│   ├── invoice_data_prog_processed.csv
+│   └── ml_flask.py
+├── np_loops.py
+├── pima-indians-diabetes.data.csv
+├── readme.md
+├── requirements.txt
+└── temperatures_test.py
+
+12 directories, 76 files
 ```
