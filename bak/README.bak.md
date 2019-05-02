@@ -2,7 +2,7 @@
 
 
 
-05-01-2019 | 20:24:41
+05-02-2019 | 01:18:42
 
 ---
 
@@ -62,11 +62,11 @@
 ├── Mersenne_sequence.py
 ├── Pipfile
 ├── Pipfile.lock
-├── SqRoot_Finder.pyw
-├── SqRoot_Finder.zip
 ├── bak
 │   └── README.bak.md
 ├── bin_packing.py
+├── binary.html
+├── binary.py
 ├── codecov.yml
 ├── collatz_conjecture
 │   ├── Pipfile
@@ -141,11 +141,20 @@
 │   ├── invoice_data_adjusted.csv
 │   ├── invoice_data_prog_processed.csv
 │   └── ml_flask.py
+├── no_cr.py
 ├── np_loops.py
 ├── pima-indians-diabetes.data.csv
+├── prime_sieve.py
+├── qt5
+│   ├── SqRoot_Finder.pyw
+│   ├── SqRoot_Finder.zip
+│   └── sq_root_2.pyw
 ├── readme.md
 ├── requirements.txt
+├── static
+│   └── binary.css
+├── tempCodeRunnerFile.py
 └── temperatures_test.py
 
-12 directories, 76 files
+14 directories, 83 files
 ```

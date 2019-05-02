@@ -21,7 +21,6 @@ install:
   # Default ...
   # - pip install -r requirements.txt
   # - pip install .
-
   # Specific ...
   - pip install -e .
   # Limit setuptools as some newer versions have Issues(tm). This needs doing
@@ -33,7 +32,10 @@ install:
   # conflicting or unused-by-travis deps?
   - pip install -r dev-requirements.txt
 # command to run tests
-script: pytest
+script:
+  - pytest
+  # Fail if any of these files have warnings
+  - shellcheck myscripts/*.sh
 after_success:
   # Upload coverage data to codecov
   - codecov
