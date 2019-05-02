@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+""" replace CR with LF """
+import sys
+import fileinput
+
+sys.stdout.writelines(
+    line.replace('\r', '\n') for line in fileinput.input(mode='rU'))
