@@ -6,17 +6,15 @@ import math
 # import json
 import secrets
 # import statistics
-# import sys
+import sys
 import timeit
 from typing import Any, Dict, List, Tuple
-
 
 import numpy as np
 
 name = "map_fil_red.py"
 json_file = sys.path[0] + '/' + name + ".json"
-# https://www.youtube.com/watch?v=09JslnY7W_k
-reference = "https://www.youtube.com/watch?v=09JslnY7W_k"
+reference = ""
 # pylint: disable=unused-variable,eval-used,missing-docstring
 
 
@@ -25,9 +23,11 @@ def area(r: float) -> float:
     return math.pi * (r**2)
 
 
-def fake_radius_list(n: int = 100) -> List(float):
+def fake_radius_list(n: int = 100, bits: int = 32) -> List[float]:
     """ create a list of fake radii data """
-    return [i for i in range(n + 1)]
+    return [secrets.randbits(bits) for i in range(n + 1)]
 
 
-secrets.random()
+test = fake_radius_list(10, 8)
+test = list.map('x**0.89', test)
+print(test)

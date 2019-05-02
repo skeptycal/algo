@@ -1,9 +1,10 @@
 import math
-from PySide import QtGui, QtCore
 import sys
 
+from PySide2 import QtCore, QtGui
 
-class SqRoot(QtGui.QMainWindow):
+
+class SqRoot(QtCore.QMainWindow):
     def __init__(self):
         super(SqRoot, self).__init__()
 

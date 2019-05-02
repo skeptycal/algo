@@ -2,6 +2,7 @@
 # -*- encoding: utf-8 -*-
 """ ml_flask.py """
 
+import os
 import pickle
 import sys
 
@@ -10,8 +11,10 @@ import pandas as pd
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 
-name = "ml_flask.py"
-json_file = sys.path[0] + '/' + name + ".json"
+# name = "ml_flask.py"
+name = sys.argv[0]
+here = os.path.abspath(os.path.dirname(__file__)) + '/'
+json_file = here + name + ".json"
 # https://www.youtube.com/watch?v=09JslnY7W_k
 reference = "https://towardsdatascience.com/publishing-machine-learning-api-with-python-flask-98be46fb2440"
 github_ref = "https://github.com/abaranovskis-redsamurai"
@@ -25,7 +28,7 @@ headers = [
 ]
 
 # Use pickle to load in the pre-trained model
-with open(f'diabetes-model.pkl', 'rb') as f:
+with open(here + '/' + 'diabetes-model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Test model with data frame

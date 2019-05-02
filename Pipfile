@@ -15,6 +15,8 @@ pre-commit = "*"
 numpy = "*"
 pandas = "*"
 flask-cors = "*"
+pyside2 = "*"
+conduit = "*"
 
 [requires]
 python_version = "3.7"
