@@ -17,6 +17,10 @@ pandas = "*"
 flask-cors = "*"
 pyside2 = "*"
 conduit = "*"
+astroid = "*"
+config = "*"
+flask-cloudy = "*"
+flask-mysql = "*"
 
 [requires]
 python_version = "3.7"
