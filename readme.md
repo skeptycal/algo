@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/416b8ca3-82db-470f-9adf-a6d06264ca75/deploy-status)](https://app.netlify.com/sites/mystifying-keller-ab5658/deploys)
 
-05-02-2019 | 01:24:03
+Last updtate: 05-02-2019 | 16:06:43
 
 ---
 
@@ -67,8 +67,12 @@
 │   ├── README.bak.md
 │   └── codecov.yml.bak
 ├── bin_packing.py
-├── binary.html
-├── binary.py
+├── binary
+│   ├── binary.py
+│   └── static
+│       ├── binary.css
+│       ├── binary.json
+│       └── binary_scratch.html
 ├── codecov.yml
 ├── collatz_conjecture
 │   ├── Pipfile
@@ -143,20 +147,26 @@
 │   ├── invoice_data_adjusted.csv
 │   ├── invoice_data_prog_processed.csv
 │   └── ml_flask.py
-├── no_cr.py
+├── nocr
 ├── np_loops.py
 ├── pima-indians-diabetes.data.csv
 ├── prime_sieve.py
 ├── qt5
 │   ├── SqRoot_Finder.pyw
-│   ├── SqRoot_Finder.zip
-│   └── sq_root_2.pyw
+│   └── SqRoot_Finder.zip
 ├── readme.md
 ├── requirements.txt
-├── static
-│   └── binary.css
+├── sed1line.txt
+├── sotu
+│   ├── regex.md
+│   ├── sotu.csv
+│   ├── sotu.html
+│   └── static
+│       ├── sotu.html
+│       ├── sotu.json
+│       └── sotu.minify.json
 ├── tempCodeRunnerFile.py
 └── temperatures_test.py
 
-14 directories, 84 files
+17 directories, 91 files
 ```

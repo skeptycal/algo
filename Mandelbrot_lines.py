@@ -11,6 +11,6 @@ name = "Mandelbrot_lines.py"
 json_file = sys.path[0] + '/' + name + ".json"
 # make something like this:
 # https://www.youtube.com/watch?v=FFftmWSzgmk
-reference = "https://www.youtube.com/watch?v=FFftmWSzgmk"
+# reference = "https://www.youtube.com/watch?v=FFftmWSzgmk"
 
 # @functions
