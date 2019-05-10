@@ -1,0 +1,3 @@
+[submodule "freelance-contract"]
+	path = freelance-contract
+	url = https://github.com/ashedryden/freelance-contract.git
