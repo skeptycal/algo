@@ -1,0 +1,19 @@
+    if (FAILED(D3D11CreateDevice(
+        NULL,
+        D3D_DRIVER_TYPE_HARDWARE,
+        NULL,
+#if _DEBUG
+        D3D11_CREATE_DEVICE_DEBUG,
+#else
+        0,
+#endif
+        NULL,
+        0,
+        D3D11_SDK_VERSION,
+        g_pDevice.address(),
+        &featureLevel,
+        g_pContext.address())))
+    {
+        fprintf(stderr, "Could not create D3D11 device!\n");
+        return false;
+    }

@@ -1,0 +1,32 @@
+// Auto-releasing wrapper for COM pointers
+// Feel free to use this for whatever, I don't care
+template <typename T>
+struct comptr
+{
+	T * p;
+
+	comptr(): p(nullptr) {}
+	comptr(T * other): p(other)
+		{ if (p) p->AddRef(); }
+	comptr(const comptr<T> & other): p(other.p)
+		{ if (p) p->AddRef(); }
+	comptr(comptr<T> && other): p(other.p)
+		{ other.p = nullptr; }
+
+	void release()
+		{ if (p) { p->Release(); p = nullptr; } }
+	~comptr()
+		{ release(); }
+
+	comptr<T> & operator = (T * other)
+		{ release(); p = other; if (p) p->AddRef(); return *this; }
+	comptr<T> & operator = (const comptr<T> & other)
+		{ release(); p = other.p; if (p) p->AddRef(); return *this; }
+	comptr<T> & operator = (comptr<T> && other)
+		{ release(); p = other.p; other.p = nullptr; return *this; }
+
+	T ** operator & () { return &p; }
+	T * operator * () { return p; }
+	T * operator -> () { return p; }
+	operator T * () { return p; }
+};

@@ -1,0 +1,28 @@
+// This works (compiled with: fxc /T ps_5_0 /E main foo.hlsl)
+float main (in uint x:X) : SV_Target0
+{
+	float a[12] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
+
+	// Put some things in the array
+	a[x] = 47.0;
+	a[x&7] = 42.0;
+	a[(x+1)%12] = 3.14159;
+
+	// Return something from the array
+	return a[(x*x+3)%12];
+}
+
+// This doesn't work: gives error X3500: array reference cannot be used as an l-value; not natively addressable
+struct S { float a[12]; };
+float main (in uint x:X) : SV_Target0
+{
+	S s = (S)0;
+
+	// Put some things in the array
+	s.a[x] = 47.0;
+	s.a[x&7] = 42.0;
+	s.a[(x+1)%12] = 3.14159;
+
+	// Return something from the array
+	return s.a[(x*x+3)%12];
+}

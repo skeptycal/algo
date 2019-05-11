@@ -1,0 +1,36 @@
+{
+  "app_info": {
+    "NAME": "Binary Tester",
+    "LANGUAGE": "Python 3.7.3 (default, Mar 27 2019, 09:23:15)",
+    "FRAMEWORK": "Flask 1.0.2",
+    "COPYRIGHT": "(c) 2019",
+    "VCS": "https://github.com/skeptycal/algo",
+    "LICENSE": "MIT",
+    "VERSION": "0.3.0"
+  },
+  "author": {
+    "AUTHOR": "Michael Treanor",
+    "WEBSITE": "https://www.skeptycal.com",
+    "EMAIL": "skeptycal@gmail.com",
+    "TWITTER": "skeptycal"
+  },
+  "project_info": {
+    "getting_started": "These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.",
+    "prerequisites": "flask (optional: git, github, pipenv, pre-commit, travis_ci)",
+    "installation": "",
+    "functional_testing": "",
+    "syntax_testing": "Flake8, Pylint",
+    "deployment": "Go to http:127.0.0.1:5000 to use the app."
+  },
+  "defaults": {
+    "DEBUG": "True",
+    "default_STORAGE_PROVIDER": "LOCAL",
+    "default_STORAGE_KEY": "",
+    "default_STORAGE_SECRET": "",
+    "default_STORAGE_CONTAINER": "./data",
+    "default_STORAGE_EXTENSIONS": ["png", "jpg", "jpeg", "mp3"],
+    "default_STORAGE_SERVER": "True",
+    "default_STORAGE_SERVER_URL": "/files",
+    "default_SECRET_KEY": "I_will_never_told_you"
+  }
+}

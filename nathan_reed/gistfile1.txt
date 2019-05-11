@@ -1,0 +1,34 @@
+float beckmann1(float m : M, float NdotH : NDOTH) : SV_Target0
+{
+	float oneOverMSquared = 1.0 / (m*m);
+	float NdotHSquared = NdotH * NdotH;
+	return exp((NdotHSquared - 1.0) / NdotHSquared * oneOverMSquared) * oneOverMSquared * (1.0 / 3.141592654) / (NdotHSquared * NdotHSquared);
+}
+
+mad r0.x, v0.y, v0.y, l(-1.000000)
+mul r0.yz, v0.xxyx, v0.xxyx
+div r0.x, r0.x, r0.z
+div r0.y, l(1.000000, 1.000000, 1.000000, 1.000000), r0.y
+mul r0.xz, r0.yyzy, r0.xxzx
+mul r0.x, r0.x, l(1.442695)
+exp r0.x, r0.x
+mul r0.x, r0.y, r0.x
+mul r0.x, r0.x, l(0.318310)
+div o0.x, r0.x, r0.z
+
+float beckmann2(float m : M, float NdotH : NDOTH) : SV_Target0
+{
+	float oneOverMSquared = 1.0 / (m*m);
+	float NdotHSquared = NdotH * NdotH;
+	return exp((1.0 - 1.0 / NdotHSquared) * oneOverMSquared) * oneOverMSquared * (1.0 / 3.141592654) / (NdotHSquared * NdotHSquared);
+}
+
+mul r0.xy, v0.xyxx, v0.xyxx
+div r0.xz, l(1.000000, 1.000000, 1.000000, 1.000000), r0.xxyx
+add r0.z, -r0.z, l(1.000000)
+mul r0.yz, r0.yyxy, r0.yyzy
+mul r0.z, r0.z, l(1.442695)
+exp r0.z, r0.z
+mul r0.x, r0.x, r0.z
+mul r0.x, r0.x, l(0.318310)
+div o0.x, r0.x, r0.y
