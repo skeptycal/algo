@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
 # -*- encoding: utf-8 -*-
 """ Binary Patterns Test App"""
+import argparse
 import json
 import math
-from os import path  # TODO update to pathlib
+import multiprocessing
+import pathlib
+from os import path  # ? update to pathlib
 from sys import argv
 from typing import Any, Dict, List
 
-from Config import config
+import jedi
+import requests
+
 from flask import (Flask, flash, jsonify, redirect, request,
                    send_from_directory, url_for)
-from flaskext.mysql import MySQL
 from werkzeug.utils import secure_filename
 from werkzeug.wsgi import SharedDataMiddleware
 
@@ -21,159 +25,13 @@ from werkzeug.wsgi import SharedDataMiddleware
 
 name = argv[0]
 here = path.abspath(path.dirname(__file__)) + '/'
-css_file = './static/binary.css'  # TODO add to config.json file
-json_file = "./static/binary.json"  # TODO add to config.json file
+css_file = './static/binary.css'  # ? add to config.json file
+json_file = './static/binary.json'  # ? add to config.json file
+header_file = './static/header.html'
+footer_file = './static/footer.html'
+
+
 app = Flask(__name__)
-app.config.clear
-
-# class app
-# path to upload UPLOAD_FOLDER; # TODO add to config.json file
-UPLOAD_FOLDER = '/path/to/the/uploads'
-# allowed upload types # TODO add to config.json file
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
-# storage location for uploaded files # TODO add to config.json file
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-# 16 MB upload filesize limit; larger raises RequestEntityTooLarge exception
-# TODO add to config.json file
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
-
-app.add_url_rule('/uploads/<filename>', 'uploaded_file', build_only=True)
-app.wsgi_app = SharedDataMiddleware(app.wsgi_app,
-                                    {'/uploads': app.config['UPLOAD_FOLDER']})
-
-mysql = MySQL()
-app.config['MYSQL_DATABASE_USER'] = 'root'  # TODO add to config.json file
-app.config[
-    'MYSQL_DATABASE_PASSWORD'] = '******'  # TODO add to config.json file
-app.config['MYSQL_DATABASE_DB'] = 'shop'  # TODO add to config.json file
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'  # TODO add to config.json file
-mysql.init_app(app)
-conn = mysql.connect()
-cursor = conn.cursor()
-
-
-def allowed_file(filename) -> bool:
-    """ test for allowed file format """
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-
-@app.route('/uploads/<filename>')
-def uploaded_file(filename):
-    """ display uploaded file """
-    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
-
-
-@app.route('/', methods=['GET', 'POST'])
-def upload_file():
-    """ upload file from client """
-    if request.method == 'POST':
-        # check if the post request has the file part
-        if 'file' not in request.files:
-            flash('No file part')
-            return redirect(request.url)
-        file = request.files['file']
-        # if user does not select file, browser also
-        # submit an empty part without filename
-        if file.filename == '':
-            flash('No selected file')
-            return redirect(request.url)
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('uploaded_file', filename=filename))
-    return '''
-    <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form method=post enctype=multipart/form-data>
-      <input type=file name=file>
-      <input type=submit value=Upload>
-    </form>
-    '''
-
-
-class DevelopmentConfig():
-    """ Dev Config for cloud storage """
-
-    # https://github.com/mardix/flask-cloudy
-    def get_json(self, file: str = json_file) -> Dict:
-        """ Get program info from json file. """
-        try:
-            with open(file, "r") as read_file:
-                data = json.load(read_file)
-        except IOError as e:
-            return e.args[0]
-        else:
-            return data
-
-    def put_json(self, data: Dict, file: str = json_file) -> int:
-        """ Write program info to json file. """
-        try:
-            with open(file, "w") as write_file:
-                json.dump(data, write_file)
-        except IOError as e:
-            return e.args[0]
-        else:
-            return 0
-
-    def create_usage(self, data: Dict) -> str:
-        """ Create program usage info from json file. """
-        self.USAGE = data['usage']
-        return self.USAGE
-
-    def create_version(self, data: Dict) -> str:
-        """ Create program version info from json file. """
-        self.VERSION = data['version']
-        return self.VERSION
-
-    @staticmethod
-    def status(s):
-        """Prints CLI string in bold."""
-        print('\033[1m{0}\033[0m'.format(s))
-
-    def print_version_string(self) -> str:
-        self.status('Binary Tester Version' + self.VERSION)
-
-    def get_key(self, key_name: str) -> Any:
-        jsonify()
-        pass
-
-    def get_provider_details(self, storage_provider_choice: str) -> bool:
-        """ get storage provider details from json file """
-        self.STORAGE_PROVIDER = storage_provider_choice
-        self.STORAGE_KEY = self.get_key('STORAGE_KEY')
-        self.STORAGE_SECRET = self.get_key('STORAGE_KEY')
-        SECRET_KEY = 'I_will_never_told_you'
-        STORAGE_CONTAINER = "./data"
-        STORAGE_KEY = ""
-        STORAGE_SECRET = ""
-        STORAGE_SERVER = True
-
-    def change_provider(self, storage_provider_choice: str = 'LOCAL') -> bool:
-        """ change to a different storage provider; return success status """
-        self.STORAGE_PROVIDER = storage_provider_choice
-        return True
-
-    def __init__(self,
-                 json_config_file: str,
-                 storage_provider_choice: str = 'LOCAL',
-                 debug_choice: bool = True):
-        """ setup storage with default LOCAL """
-        self.CONFIG_FILE = json_config_file
-        self.CONFIG: Dict[Any] = self.get_json(self.CONFIG_FILE)
-        self.VERSION = self.CONFIG('version')
-        self.DEBUG = debug_choice
-        self.STORAGE_PROVIDER = storage_provider_choice
-        self.STORAGE_KEY = ''
-        self.STORAGE_SECRET = ''
-        self.SECRET_KEY = 'I_will_never_told_you'
-        self.STORAGE_CONTAINER = "./data"
-        self.STORAGE_KEY = ""
-        self.STORAGE_SECRET = ""
-        self.STORAGE_SERVER = True
-        return
-
 
 TR: str = '<tr>'
 TRC: str = '</tr>'
@@ -183,11 +41,13 @@ BR: str = '<br/>'
 HR: str = '<hr/>'
 NB: str = '&nbsp;'
 
-HEADER = """<!DOCTYPE html>\n<html>\n\t<head>\n\t\t<title>\n\t\t\tBinary Numbers Test\n\t\t</title>\n\t<link rel = "stylesheet" type = "text/css" href = "{}" /></head>\n\t<body>\n\t\t<div>\n\t\t\t<table>""".format(
-    css_file)
-FOOTER = """\t\t\t</table>\n\t\t</div>\n\t</body>\n</html>
-"""
 
+# HEADER = '{}'.format(header_file)
+
+HEADER = """<!DOCTYPE html>\n<html>\n\t<head>\n\t\t<title>\n\t\t\tBinary Numbers Test\n\t\t</title>\n\t<link rel = "stylesheet" type = "text/css" href = "{}" /></head>\n\t<body>""".format(
+    css_file)
+FOOTER = """</body>\n</html>
+"""
 
 @app.route("/")
 def binary_pattern():
@@ -196,7 +56,7 @@ def binary_pattern():
     s: str = ''
     color_test: bool = True
 
-    response: str = HEADER + '<tr><td colspan="6">'
+    response: str = HEADER + '\n\t\t<div>\n\t\t\t<table><tr><td colspan="6">'
     response += 'Binary Numbers Test for numbers up to {}'.format(size)
     response += TDC + TRC
     response += TR
@@ -228,14 +88,21 @@ def binary_pattern():
         response += TDC + TD + s
 
         response += TDC + TRC
-    response += '<figure><embed src="https://wakatime.com/share/@skeptycal/a3be8384-4763-47e5-99c6-094cca93b838.svg"></embed></figure>'
+    # response += '<tr><td colspan="6">'
+    # response += '<embed src="https://wakatime.com/share/@skeptycal/a3be8384-4763-47e5-99c6-094cca93b838.svg" width=20%></embed>'
+    # response += TDC + TRC
+    response += '\t\t\t</table>\n\t\t</div>\n\t'
     response += FOOTER
     return response
 
 
 if __name__ == "__main__":
-    print(here)
-    print(name)
+    name = argv[0]
+    here = path.abspath(path.dirname(__file__)) + '/'
+    print('argv[0]: ',name)
+    print('here(os.path): ', here)
+    print('pathlib.cwd(): ', pathlib.Path.cwd())
+
 
     # running REST interface, port=5000 for direct test
     app.run(debug=True, host='127.0.0.1', port=5000)
