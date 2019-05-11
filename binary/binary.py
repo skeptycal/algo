@@ -7,7 +7,7 @@ from os import path  # TODO update to pathlib
 from sys import argv
 from typing import Any, Dict, List
 
-from config import Config
+from Config import config
 from flask import (Flask, flash, jsonify, redirect, request,
                    send_from_directory, url_for)
 from flaskext.mysql import MySQL
@@ -228,7 +228,7 @@ def binary_pattern():
         response += TDC + TD + s
 
         response += TDC + TRC
-
+    response += '<figure><embed src="https://wakatime.com/share/@skeptycal/a3be8384-4763-47e5-99c6-094cca93b838.svg"></embed></figure>'
     response += FOOTER
     return response
 
