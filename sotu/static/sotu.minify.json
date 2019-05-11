@@ -1,4 +1,5 @@
-[{
+[
+    {
         "Date": "string",
         "Inaugural": "bool",
         "President": "str",
