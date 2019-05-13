@@ -7,11 +7,12 @@ verify_ssl = true
 pylint = "*"
 yapf = "*"
 flake8 = "*"
+jedi = "*"
+pre-commit = "*"
 
 [packages]
 requests = "*"
 flask = "*"
-pre-commit = "*"
 numpy = "*"
 pandas = "*"
 flask-cors = "*"
