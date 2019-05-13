@@ -1,6 +1,6 @@
 # algorithms version 0.1.1
 \n[![Netlify Status](https://api.netlify.com/api/v1/badges/416b8ca3-82db-470f-9adf-a6d06264ca75/deploy-status)](https://app.netlify.com/sites/mystifying-keller-ab5658/deploys)\n
-Last update: 05-12-2019 | 21:46:32
+Last update: 05-12-2019 | 21:48:41
 \n---\n
 ## scratch projects for testing algorithms on macOS\n
 ```bash\n

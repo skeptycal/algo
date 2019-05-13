@@ -14,7 +14,7 @@ def image_data(filename: str):
         print("image format:", im.format)
         print("image mode:", im.mode)
         print("image size:", im.size)
-        if im.info.has_key("description"):
+        if "description" in im.info:
             print("image description:", im.info["description"])
 
 
