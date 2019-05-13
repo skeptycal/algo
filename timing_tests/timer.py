@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- encoding: utf-8 -*-
+""" testing <timeit> wrapper """
 import random
 from functools import wraps
 from time import time
@@ -16,18 +17,18 @@ def timeit(func):
         start = time()
         result = func(*args, **kwargs)
         end = time()
-        print(f'{func.__name__} executed in {end - start:.4f} seconds')
+        print(f'=> The function {func.__name__} executed in {end - start:.4f} seconds.')
         return result
 
     return wrapper
 
 
-# Example: sort some random numbers ...
 @timeit
 def sort_rnd_num():
-    numbers = [random.randint(100, 200) for _ in range(100000)]
-    numbers.sort()
-    return numbers
+    """ # Example: sort some random numbers ... """
+    number_list = [random.randint(100, 200) for _ in range(100000)]
+    number_list.sort()
+    return number_list
 
 
 numbers = sort_rnd_num()

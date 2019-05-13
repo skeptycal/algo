@@ -3,7 +3,7 @@
 """ walk_dir.py """
 # pylint: disable=redefined-outer-name
 # flake8: disable=F401
-import fileinput
+# import fileinput
 import glob  # python 3.5+
 import os
 import random
@@ -75,8 +75,6 @@ if __name__ == "__main__":
     print('walk_dir (absolute) = ' + os.path.abspath(walk_dir))
     print('=> Directory Listing')
     walk_it(walk_dir, True)
-
-
 
 
 """ old style: python < 3.5

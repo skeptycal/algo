@@ -5,9 +5,9 @@ import sys
 import fileinput
 
 
-for line in fileinput.input(mode='rU'):
+# for line in fileinput.input(mode='rU'):
 
-with fileinput.input(files=(mode='rU')) as f:
+with fileinput.input(mode='rU'):
     for line in f:
         process(line)
 

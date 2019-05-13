@@ -1,12 +1,12 @@
-# algorithms version 0.0.1
+# algorithms version 0.1.1
 \n[![Netlify Status](https://api.netlify.com/api/v1/badges/416b8ca3-82db-470f-9adf-a6d06264ca75/deploy-status)](https://app.netlify.com/sites/mystifying-keller-ab5658/deploys)\n
-Last update: 05-11-2019 | 07:59:16
+Last update: 05-12-2019 | 21:46:32
 \n---\n
-## scratch projects for testing on macOS\n
+## scratch projects for testing algorithms on macOS\n
 ```bash\n
 
 ###############################################################################
-# algorithms : scratch projects for testing on macOS (version 0.0.1)
+# algorithms : scratch projects for testing algorithms on macOS (version 0.1.1)
 
 # author    - Michael Treanor  <skeptycal@gmail.com>
 # copyright - 2019 (c) Michael Treanor
@@ -49,7 +49,6 @@ Last update: 05-11-2019 | 07:59:16
 \n---\n
 ```bash\n
 .
-├── 5\ Math\ Equations\ That\ Change\ the\ Way\ You\ See\ the\ World\ _\ Cracked.com.html
 ├── 5\ Math\ Equations\ That\ Change\ the\ Way\ You\ See\ the\ World\ _\ Cracked.com_files
 │   ├── 12227_45.jpg
 │   ├── 167346_45_v1.jpg
@@ -173,8 +172,6 @@ Last update: 05-11-2019 | 07:59:16
 │   ├── widgets.js
 │   ├── wrap.js
 │   └── yi.js
-├── Mandelbrot_lines.py
-├── Mersenne_sequence.py
 ├── Pipfile
 ├── Pipfile.lock
 ├── assorted
@@ -182,7 +179,6 @@ Last update: 05-11-2019 | 07:59:16
 │   ├── README.bak.md
 │   ├── README.md.bak
 │   └── codecov.yml.bak
-├── bin_packing.py
 ├── binary
 │   ├── README.md
 │   ├── binary.py
@@ -235,9 +231,10 @@ Last update: 05-11-2019 | 07:59:16
 ├── datasets
 │   ├── corncob_caps.txt
 │   ├── corncob_lowercase.txt
-│   └── english-words-master.zip
-├── datatime.py
-├── flask-realworld-example-app-master
+│   ├── english-words-master.zip
+│   ├── math_5_equations.html
+│   └── pima-indians-diabetes.data.csv
+├── flask-realworld
 │   ├── LICENSE
 │   ├── Pipfile
 │   ├── Pipfile.lock
@@ -952,29 +949,61 @@ Last update: 05-11-2019 | 07:59:16
 │   │       │   └── unicode.dsp
 │   │       └── unicode.c
 │   └── stealth-macro-nesting.cpp.txt
-├── nocr
-├── np_loops.html
-├── np_loops.py
-├── pima-indians-diabetes.data.csv
-├── prime_sieve.py
+├── nocr.py
 ├── primes
-│   └── sieve1.py
+│   ├── mersenne_primes.py
+│   ├── prime_factors.py
+│   ├── primes.py
+│   ├── sieve1.py
+│   └── trial_division.py
+├── py_code.py
 ├── qt5
 │   ├── SqRoot_Finder.pyw
 │   └── SqRoot_Finder.zip
 ├── readme.md
 ├── requirements.txt
-├── sed1line.txt
+├── resources
+│   ├── 142_coding_resources.html
+│   └── star.svg
+├── scraping
+│   ├── long_hashtags.py
+│   └── shakespeare.py
 ├── shakespeare
 │   ├── mit_html_c_p.txt
 │   ├── mit_html_src.html
 │   ├── shakespear.css
 │   └── shakespear.py
 ├── snippets
-│   ├── kaggle_start.py
-│   ├── realpath.sh
-│   ├── trap.sh
-│   └── unreal4_to_unity.py
+│   ├── file_processing
+│   │   ├── file_lines.py
+│   │   ├── in_place.py
+│   │   ├── mp3_rss_processing
+│   │   │   ├── mp3_processing.py
+│   │   │   └── my-directory-list.txt
+│   │   ├── my-directory-list.txt
+│   │   ├── py_code.py
+│   │   ├── sample_data.m3u
+│   │   ├── vscode_regex.md
+│   │   └── walk_dir.py
+│   ├── python
+│   │   ├── Mandelbrot_lines.py
+│   │   ├── Mersenne_sequence.py
+│   │   ├── bin_packing.py
+│   │   ├── datatime.py
+│   │   ├── glob.py
+│   │   ├── image_data.py
+│   │   ├── kaggle_start.py
+│   │   ├── np_loops.html
+│   │   ├── np_loops.py
+│   │   ├── path_list.py
+│   │   ├── prime_sieve.py
+│   │   ├── tempCodeRunnerFile.py
+│   │   ├── temperatures_test.py
+│   │   └── unreal4_to_unity.py
+│   └── shell
+│       ├── realpath.sh
+│       ├── sed1line.txt
+│       └── trap.sh
 ├── sotu
 │   ├── regex.md
 │   ├── sotu.csv
@@ -983,13 +1012,12 @@ Last update: 05-11-2019 | 07:59:16
 │       ├── sotu.html
 │       ├── sotu.json
 │       └── sotu.minify.json
-├── tempCodeRunnerFile.py
-├── temperatures_test.py
 └── timing_tests
     ├── and_if_test.sh
     ├── count.sh
     ├── count_test.sh
-    └── test_findings.md
+    ├── test_findings.md
+    └── timer.py
 
-95 directories, 846 files
+101 directories, 868 files
 ```\n

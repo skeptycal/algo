@@ -19,7 +19,7 @@ print(lower_bound)
 test_fit = [400 for i in range(10)]
 print(test_fit)
 for i in example:
-    for j in range(len(test_fit)):
+    for j in enumerate(test_fit):
         k = test_fit[j] - i
         print(k)
         if k >= 0:

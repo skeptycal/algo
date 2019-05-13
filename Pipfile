@@ -5,7 +5,6 @@ verify_ssl = true
 
 [dev-packages]
 pylint = "*"
-yapf = "*"
 flake8 = "*"
 jedi = "*"
 pre-commit = "*"
@@ -22,6 +21,7 @@ astroid = "*"
 config = "*"
 flask-cloudy = "*"
 flask-mysql = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"
