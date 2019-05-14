@@ -15,7 +15,7 @@ def file_len(file_name, encoding='utf8'):
     with open(file_name, encoding=encoding) as f:
         i = -1
         for i, line in enumerate(f):
-            pass
+            line = line.
     return i + 1
 
 
