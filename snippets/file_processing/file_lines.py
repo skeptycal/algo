@@ -15,7 +15,7 @@ def file_len(file_name, encoding='utf8'):
     with open(file_name, encoding=encoding) as f:
         i = -1
         for i, line in enumerate(f):
-            line = line.
+            pass
     return i + 1
 
 
@@ -23,10 +23,7 @@ p = Path()
 path = p.resolve()  # similar to os.path.abspath()
 print(sum(file_len(f) for f in path.glob('*.py')))
 
-
 # print(file_len('file_lines.py', 'utf8'))
-
-
 """
 # [References](original: https://towardsdatascience.com/bite-sized-python-recipes-52cde45f1489)
 
