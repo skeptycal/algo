@@ -13,7 +13,7 @@ def hashtag(h: str) -> str:
 
 def tweet(h: str) -> int:
     """ tweet text string """
-    pass
+    return int(h)  # TODO ... temporary return
 
 
 def main():

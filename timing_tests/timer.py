@@ -5,6 +5,14 @@ import random
 from functools import wraps
 from time import time
 
+BG_COLOR = "[48;5;230m"
+HEADER = "[38;5;18m" + BG_COLOR
+BLUE = "[38;5;27m" + BG_COLOR
+PURPLE = "[38;5;92m" + BG_COLOR
+RESET = "[0m"
+
+TIMER_FORMAT = "=> The function " + BLUE + "{0:<10s}" + RESET + " executed in " + PURPLE + "{1:>10.4f}" + RESET + " seconds."
+
 
 def timeit(func):
     """
@@ -17,7 +25,7 @@ def timeit(func):
         start = time()
         result = func(*args, **kwargs)
         end = time()
-        print(f'=> The function {func.__name__} executed in {end - start:.4f} seconds.')
+        print(TIMER_FORMAT.format(func.__name__, end - start))
         return result
 
     return wrapper
