@@ -1,11 +1,15 @@
 # algorithms version 0.1.1
-\n[![Netlify Status](https://api.netlify.com/api/v1/badges/416b8ca3-82db-470f-9adf-a6d06264ca75/deploy-status)](https://app.netlify.com/sites/mystifying-keller-ab5658/deploys)\n
-Last update: 05-12-2019 | 21:48:41
-\n---\n
-## scratch projects for testing algorithms on macOS\n
-```bash\n
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/416b8ca3-82db-470f-9adf-a6d06264ca75/deploy-status)](https://app.netlify.com/sites/mystifying-keller-ab5658/deploys)
+
+---
+
+## scratch projects for testing algorithms on macOS
+
+```bash
 
 ###############################################################################
+
 # algorithms : scratch projects for testing algorithms on macOS (version 0.1.1)
 
 # author    - Michael Treanor  <skeptycal@gmail.com>
@@ -22,32 +26,15 @@ Last update: 05-12-2019 | 21:48:41
 #       [version, -v, --version]  -- display version information
 #       [help, -h, --help]        -- display usage and information
 
-#   .pre-commit-template.yaml must be in current directory
-#       If not, a generic template will be created
-#   .pre-commit-bak.yaml will be created (if possible)
-#       from .pre-commit-config.yaml as backup
-#   .pre-commit-config.yaml will be *overwritten*
-#       and updated to current master sha from GitHub
 ###############################################################################
 
+```
 
-# Run this script if changes to the pre-commit or yaml configuration are added.
+---
 
-# Please make changes directly to the 'template' file:
-#     <.pre\-commit-template.yaml>
-# and run the script 'pc' to update the yaml to current versioning.
+Last update: 05-12-2019 | 21:48:41
 
-# Please do not make changes directly to the 'config' file. The 'config' file:
-#     <.pre-commit-config.yaml>
-#   is created and updated by the 'pc' script automatically in order to maintain
-#   the correct, current versioning from git (master sha) so changes to the
-#   commit file will be overwritten when updating.
-###############################################################################
-
-
-```\n
-\n---\n
-```bash\n
+```bash
 .
 ├── 5\ Math\ Equations\ That\ Change\ the\ Way\ You\ See\ the\ World\ _\ Cracked.com_files
 │   ├── 12227_45.jpg
@@ -1020,4 +1007,4 @@ Last update: 05-12-2019 | 21:48:41
     └── timer.py
 
 101 directories, 868 files
-```\n
+```
