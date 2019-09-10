@@ -1,8 +1,5 @@
-# Travis CI scripts (python, php)
-# Python script (other languages are at the end.)
 language: minimal
 # python:
-#  - "2.7"
 #   - "3.7"
 # install:
 #   - pip install -r requirements.txt
