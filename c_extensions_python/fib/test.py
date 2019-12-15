@@ -1,5 +1,5 @@
 import cModPyDem
 
-if __name__ == '__main__' :
+if __name__ == '__main__':
 
     print(cModPyDem.fib(200))

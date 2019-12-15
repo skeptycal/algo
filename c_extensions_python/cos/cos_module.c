@@ -5,7 +5,7 @@
 #include <math.h>
 
 /*  wrapped cosine function */
-static PyObject* cos_func(PyObject* self, PyObject* args)
+static PyObject *cos_func(PyObject *self, PyObject *args)
 {
     double value;
     double answer;
@@ -26,21 +26,19 @@ static PyObject* cos_func(PyObject* self, PyObject* args)
 
 /*  define functions in module */
 static PyMethodDef CosMethods[] =
-{
-     {"cos_func", cos_func, METH_VARARGS, "evaluate the cosine"},
-     {NULL, NULL, 0, NULL}
-};
+    {
+        {"cos_func", cos_func, METH_VARARGS, "evaluate the cosine"},
+        {NULL, NULL, 0, NULL}};
 
 #if PY_MAJOR_VERSION >= 3
 /* module initialization */
 /* Python version 3*/
 static struct PyModuleDef cModPyDem =
-{
-    PyModuleDef_HEAD_INIT,
-    "cos_module", "Some documentation",
-    -1,
-    CosMethods
-};
+    {
+        PyModuleDef_HEAD_INIT,
+        "cos_module", "Some documentation",
+        -1,
+        CosMethods};
 
 PyMODINIT_FUNC
 PyInit_cos_module(void)
@@ -55,7 +53,7 @@ PyInit_cos_module(void)
 PyMODINIT_FUNC
 initcos_module(void)
 {
-    (void) Py_InitModule("cos_module", CosMethods);
+    (void)Py_InitModule("cos_module", CosMethods);
 }
 
 #endif
