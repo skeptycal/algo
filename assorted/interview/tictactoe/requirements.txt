@@ -43,7 +43,7 @@ pandas==0.24.2
 parso==0.4.0
 perf==1.6.0
 performance==0.7.0
-pipenv==2018.11.26
+pipenv==2022.1.8
 pluggy==0.11.0
 psycopg2==2.8.2
 py==1.8.0
